@@ -1,0 +1,24 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<h1>Firebase Database</h1>
+<div class="box-element product">
+    
+    {% for datas in data %}
+    <h6><strong>p:{{datas}}</strong></h6>
+    <hr>
+
+   
+
+    {% endfor %}
+
+    <h1>Upload Image to Firebase Storage</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" required>
+        <button type="submit">Upload</button>
+    </form>
+    <button ><a href="{% url 'createitem' %}"class="btn btn-warning"></a>create</button>
+</div>
+
+{% endblock content %}

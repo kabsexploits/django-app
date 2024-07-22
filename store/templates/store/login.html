@@ -1,0 +1,22 @@
+{% extends 'store/main.html' %}
+
+
+{% load static %}
+{% block content %}
+<div class="login-container">
+    <h2>Login</h2>
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" name="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+        <input type="submit" value="Login">
+         Don't have account <a href="{% url 'signup' %}"class="btn btn-warning">Signup</a>
+    </form>
+</div>
+
+{% endblock content %}

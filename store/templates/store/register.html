@@ -1,0 +1,32 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+
+
+ <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ {% block content %}
+   <div class="container">
+   <form method='POST' action=''>
+        {% csrf_token %}
+        
+            <h1 class="form__title">Sign Up </h1>
+            <div class="form__message form__message--error"></div>
+           
+            <div class="form__input-group">
+                <input type="text" class="form__input" required  name='email'autofocus placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" required  name='password1' autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+               <a href="{% url 'login' %}" >Already have an account? Sign in</a>
+            </p>
+        </form>
+         </div>
+ <script type="text/javascript" src="{% static 'js/main2.js' %}"></script>
+ {% endblock content %}
+
